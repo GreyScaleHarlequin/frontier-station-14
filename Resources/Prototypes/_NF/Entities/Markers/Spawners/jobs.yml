@@ -7,6 +7,39 @@
     job_id: Contractor
 
 - type: entity
+  id: SpawnPointCellCommander
+  parent: SpawnPointJobBase
+  name: Cell Commander
+  components:
+  - type: SpawnPoint
+    job_id: Cell Commander
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-red
+
+- type: entity
+  id: SpawnPointCellMedic
+  parent: SpawnPointJobBase
+  name: Cell Medic
+  components:
+  - type: SpawnPoint
+    job_id: Cell Medic
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-red
+
+- type: entity
+  id: SpawnPointCellOperative
+  parent: SpawnPointJobBase
+  name: Cell Operative
+  components:
+  - type: SpawnPoint
+    job_id: Cell Operative
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-red
+
+- type: entity
   id: SpawnPointMercenary
   parent: SpawnPointJobBase
   name: mercenary
