@@ -99,7 +99,7 @@
 
 - type: radioChannel
   id: Exfiltrator
-  name: exfiltrator
+  name: Exfiltrator
   keycode: 'x'
   frequency: 1051
   color: "#8c2626"

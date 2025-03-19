@@ -67,4 +67,5 @@
     channels:
     - Common
     - Exfiltrator
+    - Syndicate
     defaultChannel: Exfiltrator

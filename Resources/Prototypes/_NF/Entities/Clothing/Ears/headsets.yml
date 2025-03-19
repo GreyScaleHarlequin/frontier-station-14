@@ -134,5 +134,15 @@
       - EncryptionKeyDoc
 
 
-#Exfiltrator headsets
-# Need to figure out new channel for Exfiltrators
+#Exfiltrator headset
+# Need to figure out new channel for Exfiltrators - Done
+- type: entity
+  id: ClothingHeadsetExfiltrator
+  parent: ClothingHeadsetGrey
+  name: Shifty Headset
+  description: An updated, modular intercom that... something's off. Takes encryption keys.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyExfiltrator
