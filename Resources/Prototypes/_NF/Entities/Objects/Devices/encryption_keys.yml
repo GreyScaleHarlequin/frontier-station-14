@@ -55,3 +55,16 @@
     layers:
     - state: crypt_silver
     - state: cmo_label
+
+- type: entity
+  parent: EncryptionKeySyndie
+  id: EncryptionKeyExfiltrator
+  name: Exfiltrator Cell Encryption Key
+  categories: [ DoNotMap ]
+  description: An encryption key for coordinating Exfiltrator Operations.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Common
+    - Exfiltrator
+    defaultChannel: Exfiltrator

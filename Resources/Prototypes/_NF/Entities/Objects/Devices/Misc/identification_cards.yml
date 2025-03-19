@@ -268,8 +268,6 @@
   components:
   - type: PresetIdCard
     job: CellOperative
-  - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
   - type: Item
     heldPrefix: Operative
 
@@ -281,8 +279,6 @@
   components:
   - type: PresetIdCard
     job: CellMedic
-  - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
   - type: Item
     heldPrefix: Operative
 
@@ -294,8 +290,6 @@
   components:
   - type: PresetIdCard
     job: CellCommander
-  - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
   - type: Item
     heldPrefix: Commander
 

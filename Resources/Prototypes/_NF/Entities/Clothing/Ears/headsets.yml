@@ -132,3 +132,7 @@
     containers:
       key_slots:
       - EncryptionKeyDoc
+
+
+#Exfiltrator headsets
+# Need to figure out new channel for Exfiltrators
