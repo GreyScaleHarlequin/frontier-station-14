@@ -506,6 +506,15 @@
   groups:
   - ExfiltratorJumpsuit
   - ExfiltratorBackpack
+  - ExfiltratorEyes
+  - ExfiltratorFace
+  - ExfiltratorGloves
+  - ExfiltratorEars
+  - ExfiltratorShoes
+  - ExfiltratorBelt
+  - OperativePDA
+  canCustomizeName: true #yippe for secret identity
+
 
 # Prisoner
 

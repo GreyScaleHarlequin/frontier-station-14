@@ -42,3 +42,10 @@ frontier-lobby-pirate-description = This is the ultimate hideout where scallywag
    - Find a crew to join
    - Socialize with other pirates
  The roles on this station are whitelist-only and require an application in the discord to be accepted.
+
+frontier-lobby-exfiltrators-subtext = Syndicate operators working to undermine NT and make the sector feel less safe.
+frontier-lobby-exfiltrators-description = A small cell of specialised Syndicate Operators, possibly even being mind controlled. Here you can:
+  - Serve Syndicate interests
+  - Lead a Cell of operatives in espionage actions
+  - Damage NanoTransen's public image
+ The roles on this station are whitelist-only and require an application in the discord to be accepted.

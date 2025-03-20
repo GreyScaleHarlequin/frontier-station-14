@@ -1,0 +1,5 @@
+﻿- type: loadout
+  id: OperativeHeadset
+  minLimit: 1
+  equipment:
+   Ears: ClothingHeadsetExfiltrator

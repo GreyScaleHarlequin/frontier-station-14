@@ -12,7 +12,7 @@
   name: Cell Commander
   components:
   - type: SpawnPoint
-    job_id: Cell Commander
+    job_id: CellCommander
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner-red
@@ -23,7 +23,7 @@
   name: Cell Medic
   components:
   - type: SpawnPoint
-    job_id: Cell Medic
+    job_id: CellMedic
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner-red
@@ -34,7 +34,7 @@
   name: Cell Operative
   components:
   - type: SpawnPoint
-    job_id: Cell Operative
+    job_id: CellOperative
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner-red

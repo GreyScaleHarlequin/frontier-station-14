@@ -18,3 +18,81 @@
   - OperativeClothingBackpackDuffel
   - OperativeClothingBackpack
   - OperativeClothingBackpackMessenger
+
+  fallbacks:
+  - OperativeClothingBackpack
+
+- type: loadoutGroup
+  id: ExfiltratorBelt
+  name: loadout-group-exfiltrator-belt
+  loadouts:
+  - OperativeClothingBeltSyndieHolster
+  - OperativeClothingBeltAssault
+  - OperativeClothingBeltSecurityWebbing
+  - OperativeClothingMilitaryWebbingMedFilled
+
+- type: loadoutGroup
+  id: ExfiltratorGloves
+  name: loadout-group-exfiltrator-gloves
+  minLimit: 0
+  loadouts:
+  - OperativeGlovesCombat
+  - OperativeGlovesBlack
+
+- type: loadoutGroup
+  id: ExfiltratorShoes
+  name: loadout-group-exfiltrator-shoes
+  loadouts:
+  - OperativeJackboots
+
+- type: loadoutGroup
+  id: ExfiltratorEyes
+  name: loadout-group-exfiltrator-eyes
+  minLimit: 0
+  loadouts:
+  - OperativeSunGlasses
+  - OperativeVisor
+
+- type: loadoutGroup
+  id: ExfiltratorNeck
+  name: loadout-group-exfiltrator-neck
+  minLimit: 0
+  loadouts:
+  - OperativeNeckScarfStripedSyndieRed
+  - OperativeNeckScarfStripedSyndieGreen
+
+- type: loadoutGroup
+  id: ExfiltratorEars
+  name: loadout-group-exfiltrator-ears
+  minLimit: 1
+  hidden: true # Auto-selected, no point showing
+  loadouts:
+  - OperativeHeadset
+  fallbacks:
+  - OperativeHeadset
+
+- type: loadoutGroup
+  id: ExfiltratorFace
+  name: loadout-group-exfiltrator-face
+  minLimit: 0
+  loadouts:
+  - OperativeGaiter
+  - OperativeGasMask
+
+- type: loadoutGroup
+  id: ExfiltratorHead
+  name: loadout-group-exfiltrator-head
+  minLimit: 0
+  loadouts:
+  - OperativeHatSyndie
+  - OperativeHatOutlaw
+
+- type: loadoutGroup
+  id: OperativePDA
+  name: loadout-group-exfiltrator-pda
+  minLimit: 1
+  hidden: true # Auto-selected, no point showing
+  loadouts:
+  - CellOperativePDA
+  fallbacks:
+  - CellOperativePDA

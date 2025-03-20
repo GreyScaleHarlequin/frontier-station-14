@@ -1,0 +1,37 @@
+﻿- type: job
+  id: CellMed
+  name: job-name-cell-medic
+  description: job-description-cell-medic
+  playTimeTracker: JobCellMedic
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 72000 # 20 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 21600 # 6 hours
+  alternateRequirementSets:
+    longerPlaytimeLessSec:
+    - !type:OverallPlaytimeRequirement
+      time: 360000 # 100 hours
+  whitelisted: true
+  startingGear: OperativeGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  supervisors: job-supervisors-cellcomm
+  weight: 170
+  displayWeight: 55 # Second from the top
+  canBeAntag: true
+  access:
+  - SyndicateAgent
+  - NuclearOperative
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+
+- type: startingGear
+  id: OperativeGear
+  equipment:
+    pocket1: WeaponDisabler
+    pocket2: WeaponPistolViper
+    ears: ClothingHeadsetExfiltrator

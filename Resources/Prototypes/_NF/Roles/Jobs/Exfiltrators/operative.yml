@@ -1,0 +1,33 @@
+﻿- type: job
+  id: CellOperative
+  name: job-name-cell-operative
+  description: job-description-cell-operative
+  playTimeTracker: JobCellOperative
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 72000 # 20 hrs
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 21600 # 6 hours
+  whitelisted: true
+  startingGear: OperativeGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  supervisors: job-supervisors-cellcomm
+  weight: 170
+  displayWeight: 55 # Second from the top
+  canBeAntag: true
+  access:
+  - SyndicateAgent
+  - NuclearOperative
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+
+- type: startingGear
+  id: OperativeGear
+  equipment:
+    pocket1: WeaponDisabler
+    pocket2: WeaponPistolViper
+    ears: ClothingHeadsetExfiltrator

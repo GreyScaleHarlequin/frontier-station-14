@@ -7,3 +7,5 @@ job-supervisors-prisoner = all NFSD personnel
 job-supervisors-nfsd = Deputies, the Bailiff, and the Sheriff
 job-supervisors-pirate = the First Mate and Captain
 job-supervisors-nobody = nobody
+job-supervisors-syndicate = Syndicate High Command
+job-supervisors-cellcomm = the Cell Commander
