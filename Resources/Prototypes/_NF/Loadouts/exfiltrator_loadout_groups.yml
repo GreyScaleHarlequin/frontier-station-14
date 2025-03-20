@@ -1,0 +1,20 @@
+﻿- type: loadoutGroup
+  id: ExfiltratorJumpsuit
+  name: loadout-group-exfiltrator-jumpsuit
+  loadouts:
+  - OperativeClothingUniformJumpskirt
+  - OperativeClothingUniformJumpsuit
+  - OperativeClothingUniformJumpskirtFormal
+  - OperativeClothingUniformJumpsuitFormal
+
+  fallbacks:
+  - OperativeClothingUniformJumpsuit
+  - OperativeClothingUniformJumpskirt
+
+- type: loadoutGroup
+  id: ExfiltratorBackpack
+  name: loadout-group-exfiltrator-backpack
+  loadouts:
+  - OperativeClothingBackpackDuffel
+  - OperativeClothingBackpack
+  - OperativeClothingBackpackMessenger

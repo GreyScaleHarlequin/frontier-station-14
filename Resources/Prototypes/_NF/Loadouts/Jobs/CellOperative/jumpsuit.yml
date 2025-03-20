@@ -7,3 +7,14 @@
   id: OperativeClothingUniformJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtOperative
+
+- type: loadout
+  id: OperativeClothingUniformJumpskirtFormal
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSyndieFormalDress
+
+- type: loadout
+  id: OperativeClothingUniformJumpsuitFormal
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndieFormalNF
+

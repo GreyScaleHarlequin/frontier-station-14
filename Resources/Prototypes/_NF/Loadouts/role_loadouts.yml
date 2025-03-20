@@ -499,6 +499,14 @@
   - NFSpeciesSpecific
   canCustomizeName: true # pseudonym?
 
+# Exfiltrators
+
+- type: roleLoadout
+  id: JobCellOperative
+  groups:
+  - ExfiltratorJumpsuit
+  - ExfiltratorBackpack
+
 # Prisoner
 
 - type: roleLoadout
