@@ -4,8 +4,6 @@
   loadouts:
   - OperativeClothingUniformJumpskirt
   - OperativeClothingUniformJumpsuit
-  - OperativeClothingUniformJumpskirtFormal
-  - OperativeClothingUniformJumpsuitFormal
 
   fallbacks:
   - OperativeClothingUniformJumpsuit
@@ -29,7 +27,6 @@
   - OperativeClothingBeltSyndieHolster
   - OperativeClothingBeltAssault
   - OperativeClothingBeltSecurityWebbing
-  - OperativeClothingMilitaryWebbingMedFilled
 
 - type: loadoutGroup
   id: ExfiltratorGloves

@@ -526,12 +526,25 @@
   - ExfiltratorGloves
   - ExfiltratorEars
   - ExfiltratorShoes
-  - ExfiltratorBelt
+  - CellMedBelts
   - NFSpeciesSpecific
   - CellMedicCellMedPDA
   canCustomizeName: true
 
-
+- type: roleLoadout
+  id: JobCellComm
+  groups:
+  - CellCommJumpsuit
+  - ExfiltratorBackpack
+  - ExfiltratorEyes
+  - ExfiltratorFace
+  - ExfiltratorGloves
+  - ExfiltratorEars
+  - ExfiltratorShoes
+  - CellCommBelt
+  - NFSpeciesSpecific
+  - CellCommPDA
+  canCustomizeName: true
 
 # Prisoner
 
