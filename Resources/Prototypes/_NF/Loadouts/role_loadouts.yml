@@ -512,8 +512,26 @@
   - ExfiltratorEars
   - ExfiltratorShoes
   - ExfiltratorBelt
+  - NFSpeciesSpecific
   - OperativePDA
   canCustomizeName: true #yippee for secret identity
+
+- type: roleLoadout
+  id: JobCellMedic
+  groups:
+  - CellMedJumpsuit
+  - CellMedBags
+  - ExfiltratorEyes
+  - ExfiltratorFace
+  - ExfiltratorGloves
+  - ExfiltratorEars
+  - ExfiltratorShoes
+  - ExfiltratorBelt
+  - NFSpeciesSpecific
+  - CellMedicCellMedPDA
+  canCustomizeName: true
+
+
 
 # Prisoner
 

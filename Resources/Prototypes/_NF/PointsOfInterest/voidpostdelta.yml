@@ -30,4 +30,5 @@
         lobbySortOrder: 4
       - type: StationJobs
         availableJobs:
+          CellMedic: [ 1, 1]
           CellOperative: [ 2, 2 ]

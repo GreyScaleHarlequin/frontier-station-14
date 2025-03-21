@@ -2,6 +2,7 @@ job-description-bailiff = Patrol your assigned vessel, ensure that no one is ste
 job-description-brigmedic-nf = Fight in the rear of the sheriff's service, for the lives of your comrades! You are the first and last hope of your squad. Hippocrates bless you.
 job-description-cadet-nf = Learn the basics of arresting criminals and managing the brig. Listen to your supervisors and feel free to ask them for any help.
 job-description-cell-operative = Follow your Commanders orders and undermine NT interests, while following COP. Failure is Dereliction.
+job-description-cell-medic = Attend to the health of the Exfiltrator Cell as best you can during operations.
 job-description-contractor = Fulfill any profitable contracts out on the frontier of NT space.
 job-description-deputy = Catch criminals and enemies of the corporation, enforce the law, and ensure that the sector does not fall into disarray.
 job-description-nf-detective = Investigate crime scenes using forensic tools, ensure that the guilty party is found, and have a couple smokes.
