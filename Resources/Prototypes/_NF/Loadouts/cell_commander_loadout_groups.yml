@@ -11,7 +11,7 @@
 
 - type: loadoutGroup
   id: CellCommBelt
-  name: loadout-group-contractor-belts
+  name: loadout-group-exfiltrator-belts
   loadouts:
   - CellCommBeltSabre
   - CellCommClothingBeltSecurityWebbing

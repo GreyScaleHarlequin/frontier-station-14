@@ -17,9 +17,9 @@
   startingGear: CellCommGear
   alwaysUseSpawner: true
   requireAdminNotify: true
-  supervisors: job-supervisors-Syndicate
-  weight: 180
-  displayWeight: 55 # Second from the top
+  supervisors: job-supervisors-syndicate
+  weight: 190
+  displayWeight: 60 # Second from the top
   canBeAntag: true
   access:
   - SyndicateAgent

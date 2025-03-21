@@ -535,13 +535,13 @@
   id: JobCellComm
   groups:
   - CellCommJumpsuit
+  - CellCommBelt
   - ExfiltratorBackpack
   - ExfiltratorEyes
   - ExfiltratorFace
   - ExfiltratorGloves
   - ExfiltratorEars
   - ExfiltratorShoes
-  - CellCommBelt
   - NFSpeciesSpecific
   - CellCommPDA
   canCustomizeName: true
