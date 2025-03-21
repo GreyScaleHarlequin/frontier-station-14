@@ -11,7 +11,8 @@
 
 - type: loadoutGroup
   id: CellCommBelt
-  name: loadout-group-exfiltrator-belts
+  name: loadout-group-contractor-belt
+  minLimit: 0
   loadouts:
   - CellCommBeltSabre
   - CellCommClothingBeltSecurityWebbing
@@ -20,7 +21,7 @@
 
 - type: loadoutGroup
   id: CellCommPDA
-  name: loadout-group-exfiltrator-pda
+  name: loadout-group-contractor-pda
   hidden: true # No point in showing this, it gets auto-selected.
   loadouts:
   - CellCommPDA

@@ -1,6 +1,6 @@
 ﻿- type: loadoutGroup
   id: ExfiltratorJumpsuit
-  name: loadout-group-exfiltrator-jumpsuit
+  name: loadout-group-contractor-jumpsuit
   loadouts:
   - OperativeClothingUniformJumpskirt
   - OperativeClothingUniformJumpsuit
@@ -11,7 +11,7 @@
 
 - type: loadoutGroup
   id: ExfiltratorBackpack
-  name: loadout-group-exfiltrator-backpack
+  name: loadout-group-contractor-backpack
   loadouts:
   - OperativeClothingBackpackDuffel
   - OperativeClothingBackpack
@@ -22,7 +22,7 @@
 
 - type: loadoutGroup
   id: ExfiltratorBelt
-  name: loadout-group-exfiltrator-belt
+  name: loadout-group-contractor-belt
   loadouts:
   - OperativeClothingBeltSyndieHolster
   - OperativeClothingBeltAssault
@@ -30,7 +30,7 @@
 
 - type: loadoutGroup
   id: ExfiltratorGloves
-  name: loadout-group-exfiltrator-gloves
+  name: loadout-group-contractor-gloves
   minLimit: 0
   loadouts:
   - OperativeGlovesCombat
@@ -38,13 +38,13 @@
 
 - type: loadoutGroup
   id: ExfiltratorShoes
-  name: loadout-group-exfiltrator-shoes
+  name: loadout-group-contractor-shoes
   loadouts:
   - OperativeJackboots
 
 - type: loadoutGroup
   id: ExfiltratorEyes
-  name: loadout-group-exfiltrator-eyes
+  name: loadout-group-contractor-glasses
   minLimit: 0
   loadouts:
   - OperativeSunGlasses
@@ -52,7 +52,7 @@
 
 - type: loadoutGroup
   id: ExfiltratorNeck
-  name: loadout-group-exfiltrator-neck
+  name: loadout-group-contractor-neck
   minLimit: 0
   loadouts:
   - OperativeNeckScarfStripedSyndieRed
@@ -60,7 +60,7 @@
 
 - type: loadoutGroup
   id: ExfiltratorEars
-  name: loadout-group-exfiltrator-ears
+  name: loadout-group-contractor-ears
   minLimit: 1
   hidden: true # Auto-selected, no point showing
   loadouts:
@@ -70,7 +70,7 @@
 
 - type: loadoutGroup
   id: ExfiltratorFace
-  name: loadout-group-exfiltrator-face
+  name: loadout-group-contractor-face
   minLimit: 0
   loadouts:
   - OperativeGaiter
@@ -78,7 +78,7 @@
 
 - type: loadoutGroup
   id: ExfiltratorHead
-  name: loadout-group-exfiltrator-head
+  name: loadout-group-contractor-head
   minLimit: 0
   loadouts:
   - OperativeHatSyndie
@@ -86,7 +86,7 @@
 
 - type: loadoutGroup
   id: OperativePDA
-  name: loadout-group-exfiltrator-pda
+  name: loadout-group-contractor-pda
   minLimit: 1
   hidden: true # Auto-selected, no point showing
   loadouts:

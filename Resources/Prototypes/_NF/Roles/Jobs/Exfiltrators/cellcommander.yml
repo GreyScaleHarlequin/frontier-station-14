@@ -9,16 +9,12 @@
   - !type:RoleTimeRequirement
     role: JobCellOperative
     time: 28800 # 8 hours
-  AlternateRequirementsSets:
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 64800 # 18 hours
   whitelisted: true
   startingGear: CellCommGear
   alwaysUseSpawner: true
   requireAdminNotify: true
   supervisors: job-supervisors-syndicate
-  weight: 190
+  weight: 160
   displayWeight: 60 # Second from the top
   canBeAntag: true
   access:
