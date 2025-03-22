@@ -21,6 +21,14 @@
   - SyndicateAgent
   - NuclearOperative
   special:
+  - !type:AddComponentSpecial
+    components:
+    - type: MailDisabled
+    - type: SpecialSectorStationRecord
+      recordGeneration: FalseRecord
+    - type: NpcFactionMember
+      factions:
+      - Syndicate
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift

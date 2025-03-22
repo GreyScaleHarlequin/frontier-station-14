@@ -4,8 +4,8 @@ meta:
   engineVersion: 247.2.0
   forkId: ""
   forkVersion: ""
-  time: 03/21/2025 18:52:37
-  entityCount: 771
+  time: 03/21/2025 23:56:33
+  entityCount: 777
 maps: []
 grids:
 - 1
@@ -137,10 +137,8 @@ entities:
             0: 61440
           0,-2:
             0: 65535
-          -1,-3:
-            0: 63351
           -1,-2:
-            0: 65535
+            0: 65319
           -1,-1:
             0: 65535
           1,-3:
@@ -187,6 +185,8 @@ entities:
             0: 63344
           -2,-3:
             1: 24576
+          -1,-3:
+            0: 30583
         uniqueMixes:
         - volume: 2500
           temperature: 293.15
@@ -368,6 +368,13 @@ entities:
       access:
       - - NuclearOperative
       - - SyndicateAgent
+- proto: AirlockSyndicate
+  entities:
+  - uid: 776
+    components:
+    - type: Transform
+      pos: -2.5,-6.5
+      parent: 1
 - proto: AirlockSyndicateLocked
   entities:
   - uid: 15
@@ -1890,11 +1897,11 @@ entities:
       canCollide: False
 - proto: ComputerRadar
   entities:
-  - uid: 769
+  - uid: 777
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,-6.5
+      rot: 3.141592653589793 rad
+      pos: -0.5,-5.5
       parent: 1
 - proto: ComputerShipyardSyndicate
   entities:
@@ -3096,6 +3103,7 @@ entities:
   - uid: 404
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
       pos: -3.5,-5.5
       parent: 1
     - type: AtmosPipeColor
@@ -3354,14 +3362,15 @@ entities:
   - uid: 432
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,-6.5
+      pos: -3.5,-4.5
       parent: 1
-    - type: AtmosPipeColor
-      color: '#990000FF'
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 6
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 433
     components:
     - type: Transform
@@ -4619,10 +4628,10 @@ entities:
       parent: 1
 - proto: VendingMachineSyndieDrobe
   entities:
-  - uid: 609
+  - uid: 772
     components:
     - type: Transform
-      pos: -0.5,-8.5
+      pos: 4.5,-0.5
       parent: 1
 - proto: WallPlastitanium
   entities:
@@ -4979,6 +4988,11 @@ entities:
       parent: 1
 - proto: WallReinforced
   entities:
+  - uid: 609
+    components:
+    - type: Transform
+      pos: -3.5,-6.5
+      parent: 1
   - uid: 677
     components:
     - type: Transform
@@ -5182,6 +5196,26 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 8.5,-3.5
+      parent: 1
+  - uid: 769
+    components:
+    - type: Transform
+      pos: -0.5,-8.5
+      parent: 1
+  - uid: 773
+    components:
+    - type: Transform
+      pos: -0.5,-7.5
+      parent: 1
+  - uid: 774
+    components:
+    - type: Transform
+      pos: -0.5,-6.5
+      parent: 1
+  - uid: 775
+    components:
+    - type: Transform
+      pos: -1.5,-6.5
       parent: 1
 - proto: WallReinforcedDiagonal
   entities:
