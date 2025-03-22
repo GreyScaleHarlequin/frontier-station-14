@@ -28,7 +28,7 @@
       recordGeneration: FalseRecord
     - type: NpcFactionMember
       factions:
-      - Syndicate
+      - ExfiltratorsNF
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift

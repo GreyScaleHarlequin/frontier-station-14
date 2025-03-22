@@ -183,13 +183,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - ## Frontier Factions
-  - #- Monkey
-  - #- Goblin
+  ## Frontier Factions
+  #- Monkey
+  #- Goblin
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - #- PirateNF
+  #- PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -197,7 +197,7 @@
   - MercenariesExpeditionNF
   - SiliconsExpeditionNF
   - AberrantFleshExpeditionNF
-  - # - ContrabandClothing
+  #- ContrabandClothing
   - ContrabandDetection
 
 - type: npcFaction

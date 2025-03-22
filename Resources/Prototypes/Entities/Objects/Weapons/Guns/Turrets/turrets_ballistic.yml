@@ -8,6 +8,15 @@
     - Syndicate
 
 - type: entity
+  parent: [BaseWeaponBallisticTurret, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  id: WeaponTurretExfiltrator
+  suffix: Exfiltrator
+  components:
+  - type: NpcFactionMember
+    factions:
+    - ExfiltratorsNF
+
+- type: entity
   parent: BaseWeaponBallisticTurret
   id: WeaponTurretSyndicateDisposable
   name: disposable ballistic turret
