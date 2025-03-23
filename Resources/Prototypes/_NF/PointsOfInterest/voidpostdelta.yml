@@ -31,5 +31,5 @@
       - type: StationJobs
         availableJobs:
           CellCommander: [ 1, 1 ]
-          CellMedic: [ 1, 1]
-          CellOperative: [ 2, 2 ]
+          CellMedic: [ 1, 0]
+          CellOperative: [ 2, 0 ]

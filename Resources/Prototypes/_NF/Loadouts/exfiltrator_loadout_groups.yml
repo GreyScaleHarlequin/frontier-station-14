@@ -85,6 +85,16 @@
   - OperativeHatOutlaw
 
 - type: loadoutGroup
+  id: ExfiltratorImplanter
+  name: loadout-group-contractor-implanter
+  minLimit: 1
+  hidden: true
+  loadouts:
+  - ExfiltratorRattlerImplanter
+  fallbacks:
+  - ExfiltratorRattlerImplanter
+
+- type: loadoutGroup
   id: OperativePDA
   name: loadout-group-contractor-pda
   minLimit: 1

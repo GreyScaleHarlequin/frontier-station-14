@@ -512,6 +512,8 @@
   - ExfiltratorEars
   - ExfiltratorShoes
   - ExfiltratorBelt
+  - ExfiltratorImplanter
+  - ContractorBoxSurvival
   - NFSpeciesSpecific
   - OperativePDA
   canCustomizeName: true #yippee for secret identity
@@ -527,6 +529,8 @@
   - ExfiltratorEars
   - ExfiltratorShoes
   - CellMedBelts
+  - ExfiltratorImplanter
+  - ContractorBoxSurvival
   - NFSpeciesSpecific
   - CellMedicCellMedPDA
   canCustomizeName: true
@@ -542,6 +546,8 @@
   - ExfiltratorGloves
   - ExfiltratorEars
   - ExfiltratorShoes
+  - ExfiltratorImplanter
+  - ContractorBoxSurvival
   - NFSpeciesSpecific
   - CellCommPDA
   canCustomizeName: true

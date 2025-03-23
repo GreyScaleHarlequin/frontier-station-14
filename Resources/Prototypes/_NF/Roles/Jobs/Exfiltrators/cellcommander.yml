@@ -21,6 +21,8 @@
   - SyndicateAgent
   - NuclearOperative
   special:
+  - !type:AddImplantSpecial
+    implants: [ DeathRattleExfilImplant ]
   - !type:AddComponentSpecial
     components:
     - type: MailDisabled
@@ -39,3 +41,8 @@
     pocket1: WeaponDisabler
     pocket2: WeaponPistolViper
     ears: ClothingHeadsetExfiltrator
+  storage:
+    back:
+    - DeathRattleExfilImplanter
+    - MagazinePistol
+    - MagazinePistol

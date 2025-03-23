@@ -21,6 +21,14 @@
   - SyndicateAgent
   - NuclearOperative
   special:
+  - !type:AddComponentSpecial
+    components:
+    - type: MailDisabled
+    - type: SpecialSectorStationRecord
+      recordGeneration: FalseRecord
+    - type: NpcFactionMember
+      factions:
+      - ExfiltratorsNF
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
@@ -31,3 +39,8 @@
     pocket1: WeaponDisabler
     pocket2: WeaponPistolViper
     ears: ClothingHeadsetExfiltrator
+  storage:
+    back:
+    - ExfiltratorRattlerImplanter
+    - MagazinePistol
+    - MagazinePistol
