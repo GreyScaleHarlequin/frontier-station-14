@@ -20,9 +20,9 @@
   color: "#DE3A3A"
   weight: -20 # accounted for in jobs
   roles:
-  - NFPirateCaptain
-  - NFPirateFirstMate
-  - NFPirate
+  - PirateCaptain
+  - PirateFirstMate
+  - Pirate
   - Prisoner #nyano
   - CellCommander
   - CellOperative

@@ -152,8 +152,6 @@
 
   defaultModules:
   - BorgModuleTreatment
-  - BorgModuleAdvancedTreatment # Frontier
-  - BorgModuleDefibrillator # Frontier
 
   radioChannels:
   - Science

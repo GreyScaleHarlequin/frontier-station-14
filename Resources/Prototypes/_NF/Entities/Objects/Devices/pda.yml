@@ -379,12 +379,11 @@
 
 - type: entity
   parent: PiratePDA
-  id: NFPiratePDA
+  id: PirateNFPDA
   name: pirate PDA
-  suffix: Frontier
   components:
   - type: Pda
-    id: NFPirateIDCard
+    id: PirateNFIDCard
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -393,12 +392,11 @@
 
 - type: entity
   parent: PiratePDA
-  id: NFPirateCaptainPDA
+  id: PirateCaptainNFPDA
   name: pirate captain PDA
-  suffix: Frontier
   components:
   - type: Pda
-    id: NFPirateCaptainIDCard
+    id: PirateCaptainNFIDCard
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -407,12 +405,11 @@
 
 - type: entity
   parent: PiratePDA
-  id: NFPirateFirstMatePDA
+  id: PirateFirstMateNFPDA
   name: pirate first mate PDA
-  suffix: Frontier
   components:
   - type: Pda
-    id: NFPirateFirstMateIDCard
+    id: PirateFirstMateNFIDCard
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:

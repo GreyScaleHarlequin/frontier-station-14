@@ -430,7 +430,6 @@
   - type: Access
     groups:
     - AllAccess
-    - Silicon
   - type: Eye
     drawFov: false
   - type: Examiner
@@ -613,7 +612,7 @@
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHigh
   - type: RandomMetadata
-    nameSegments: [NFNamesBorg] # Frontier: NamesBorg<NFNamesBorg
+    nameSegments: [NFNamesBorgUnlocalized] # Frontier: names_borg<NFNamesBorgUnlocalized
 
 - type: entity
   id: PlayerBorgDerelictGhostRole

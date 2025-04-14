@@ -267,7 +267,7 @@
         - /Maps/_NF/Bluespace/cave.yml
 
 - type: entity
-  id: NFBluespaceBrokenMcDelivery
+  id: BluespaceBrokenMcDelivery
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent

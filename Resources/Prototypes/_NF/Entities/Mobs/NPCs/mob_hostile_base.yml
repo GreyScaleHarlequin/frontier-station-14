@@ -21,7 +21,7 @@
     sweatHeatRegulation: 2000
     shiveringHeatRegulation: 2000
     normalBodyTemperature: 310.15
-    thermalRegulationTemperatureThreshold: 2
+    thermalRegulationTemperatureThreshold: 25
   - type: MovedByPressure
   - type: Insulated
 
@@ -89,6 +89,7 @@
   components:
   - type: NFSalvageMobRestrictions
     addComponentsOnDeath:
+    - type: Uncloneable
     - type: Unrevivable
     - type: Strippable
     - type: UserInterface
@@ -372,8 +373,8 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-    - id: FoodMeatRotten
-      amount: 2
+    - id: FoodMeatHuman
+      amount: 5
   - type: NpcFactionMember
     factions:
     - SimpleHostile

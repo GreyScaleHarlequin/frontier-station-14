@@ -450,8 +450,7 @@ namespace Content.Client.IconSmoothing
             while (candidates.MoveNext(out var entity))
             {
                 if (smoothQuery.TryGetComponent(entity, out var other) &&
-                    other.SmoothKey != null &&
-                    (other.SmoothKey == smooth.SmoothKey || smooth.AdditionalKeys.Contains(other.SmoothKey)) &&
+                    other.SmoothKey == smooth.SmoothKey &&
                     other.Enabled &&
                     EntityIsSmoothOnEdge(entity, other, offset)) // Frontier: added EntityIsSmoothOnEdge
                 {

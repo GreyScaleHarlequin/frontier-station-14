@@ -163,7 +163,7 @@
 - type: entity
   parent: BaseSubdermalImplant
   id: RadioImplantFreelance
-  name: freelance radio implant
+  name: radio implant
   description: This implant grants access to the Freelance channel without a headset.
   categories: [ HideSpawnMenu ]
   components:

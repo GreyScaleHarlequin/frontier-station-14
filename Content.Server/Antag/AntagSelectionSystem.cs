@@ -11,11 +11,8 @@ using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
 using Content.Server.Shuttles.Components;
-using Content.Server.Station.Events;
-using Content.Shared.Administration.Logs;
 using Content.Shared.Antag;
 using Content.Shared.Clothing;
-using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Ghost;
@@ -49,7 +46,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
@@ -93,33 +89,19 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         var query = QueryActiveRules();
         while (query.MoveNext(out var uid, out _, out var comp, out _))
         {
-            if (comp.SelectionTime != AntagSelectionTime.PrePlayerSpawn && comp.SelectionTime != AntagSelectionTime.IntraPlayerSpawn)
+            if (comp.SelectionTime != AntagSelectionTime.PrePlayerSpawn)
                 continue;
 
-            if (comp.AssignmentComplete)
-                continue;
-
-            ChooseAntags((uid, comp), pool); // We choose the antags here...
-
-            if (comp.SelectionTime == AntagSelectionTime.PrePlayerSpawn)
-            {
-                AssignPreSelectedSessions((uid, comp)); // ...But only assign them if PrePlayerSpawn
-                foreach (var session in comp.AssignedSessions)
-                {
-                    args.PlayerPool.Remove(session);
-                    GameTicker.PlayerJoinGame(session);
-                }
-            }
-        }
-
-        // If IntraPlayerSpawn is selected, delayed rules should choose at this point too.
-        var queryDelayed = QueryDelayedRules();
-        while (queryDelayed.MoveNext(out var uid, out _, out var comp, out _))
-        {
-            if (comp.SelectionTime != AntagSelectionTime.IntraPlayerSpawn)
+            if (comp.SelectionsComplete)
                 continue;
 
             ChooseAntags((uid, comp), pool);
+
+            foreach (var session in comp.SelectedSessions)
+            {
+                args.PlayerPool.Remove(session);
+                GameTicker.PlayerJoinGame(session);
+            }
         }
     }
 
@@ -128,11 +110,10 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         var query = QueryActiveRules();
         while (query.MoveNext(out var uid, out _, out var comp, out _))
         {
-            if (comp.SelectionTime != AntagSelectionTime.PostPlayerSpawn && comp.SelectionTime != AntagSelectionTime.IntraPlayerSpawn)
+            if (comp.SelectionTime != AntagSelectionTime.PostPlayerSpawn)
                 continue;
 
             ChooseAntags((uid, comp), args.Players);
-            AssignPreSelectedSessions((uid, comp));
         }
     }
 
@@ -145,13 +126,11 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         // eventually this should probably store the players per definition with some kind of unique identifier.
         // something to figure out later.
 
-        var query = QueryAllRules();
+        var query = QueryActiveRules();
         var rules = new List<(EntityUid, AntagSelectionComponent)>();
-        while (query.MoveNext(out var uid, out var antag, out _))
+        while (query.MoveNext(out var uid, out _, out var antag, out _))
         {
-            if (HasComp<ActiveGameRuleComponent>(uid) ||
-                (HasComp<DelayedStartRuleComponent>(uid) && antag.SelectionTime == AntagSelectionTime.IntraPlayerSpawn)) //IntraPlayerSpawn selects antags before spawning, but doesn't activate until after.
-                rules.Add((uid, antag));
+            rules.Add((uid, antag));
         }
         RobustRandom.Shuffle(rules);
 
@@ -163,7 +142,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (!antag.Definitions.Any(p => p.LateJoinAdditional))
                 continue;
 
-            DebugTools.AssertNotEqual(antag.SelectionTime, AntagSelectionTime.PrePlayerSpawn);
+            DebugTools.AssertEqual(antag.SelectionTime, AntagSelectionTime.PostPlayerSpawn);
 
             // do not count players in the lobby for the antag ratio
             var players = _playerManager.NetworkedSessions.Count(x => x.AttachedEntity != null);
@@ -171,9 +150,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (!TryGetNextAvailableDefinition((uid, antag), out var def, players))
                 continue;
 
-            var onlyPreSelect = (antag.SelectionTime == AntagSelectionTime.IntraPlayerSpawn && !antag.AssignmentComplete); // Don't wanna give them antag status if the rule hasn't assigned its existing ones yet
-
-            if (TryMakeAntag((uid, antag), args.Player, def.Value, onlyPreSelect: onlyPreSelect))
+            if (TryMakeAntag((uid, antag), args.Player, def.Value))
                 break;
         }
     }
@@ -206,20 +183,14 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (GameTicker.RunLevel != GameRunLevel.InRound)
             return;
 
-        if (component.AssignmentComplete)
+        if (component.SelectionsComplete)
             return;
 
-        if (!component.PreSelectionsComplete)
-        {
-            var players = _playerManager.Sessions
-                .Where(x => GameTicker.PlayerGameStatuses.TryGetValue(x.UserId, out var status) &&
-                            status == PlayerGameStatus.JoinedGame)
-                .ToList();
+        var players = _playerManager.Sessions
+            .Where(x => GameTicker.PlayerGameStatuses.TryGetValue(x.UserId, out var status) && status == PlayerGameStatus.JoinedGame)
+            .ToList();
 
-            ChooseAntags((uid, component), players, midround: true);
-        }
-
-        AssignPreSelectedSessions((uid, component));
+        ChooseAntags((uid, component), players, midround: true);
     }
 
     /// <summary>
@@ -230,7 +201,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     /// <param name="midround">Disable picking players for pre-spawn antags in the middle of a round</param>
     public void ChooseAntags(Entity<AntagSelectionComponent> ent, IList<ICommonSession> pool, bool midround = false)
     {
-        if (ent.Comp.PreSelectionsComplete)
+        if (ent.Comp.SelectionsComplete)
             return;
 
         foreach (var def in ent.Comp.Definitions)
@@ -238,7 +209,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             ChooseAntags(ent, pool, def, midround: midround);
         }
 
-        ent.Comp.PreSelectionsComplete = true;
+        ent.Comp.SelectionsComplete = true;
     }
 
     /// <summary>
@@ -279,53 +250,21 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
                     break;
                 }
 
-                if (session != null && ent.Comp.PreSelectedSessions.Values.Any(x => x.Contains(session)))
+                if (session != null && ent.Comp.SelectedSessions.Contains(session))
                 {
                     Log.Warning($"Somehow picked {session} for an antag when this rule already selected them previously");
                     continue;
                 }
             }
 
-            if (session == null)
-                MakeAntag(ent, null, def); // This is for spawner antags
-            else
-            {
-                if (!ent.Comp.PreSelectedSessions.TryGetValue(def, out var set))
-                    ent.Comp.PreSelectedSessions.Add(def, set = new HashSet<ICommonSession>());
-                set.Add(session); // Selection done!
-                Log.Debug($"Pre-selected {session.Name} as antagonist: {ToPrettyString(ent)}");
-                _adminLogger.Add(LogType.AntagSelection, $"Pre-selected {session.Name} as antagonist: {ToPrettyString(ent)}");
-            }
+            MakeAntag(ent, session, def);
         }
-    }
-
-    /// <summary>
-    /// Assigns antag roles to sessions selected for it.
-    /// </summary>
-    public void AssignPreSelectedSessions(Entity<AntagSelectionComponent> ent)
-    {
-        // Only assign if there's been a pre-selection, and the selection hasn't already been made
-        if (!ent.Comp.PreSelectionsComplete || ent.Comp.AssignmentComplete)
-            return;
-
-        foreach (var def in ent.Comp.Definitions)
-        {
-            if (!ent.Comp.PreSelectedSessions.TryGetValue(def, out var set))
-                continue;
-
-            foreach (var session in set)
-            {
-                TryMakeAntag(ent, session, def);
-            }
-        }
-
-        ent.Comp.AssignmentComplete = true;
     }
 
     /// <summary>
     /// Tries to makes a given player into the specified antagonist.
     /// </summary>
-    public bool TryMakeAntag(Entity<AntagSelectionComponent> ent, ICommonSession? session, AntagSelectionDefinition def, bool ignoreSpawner = false, bool checkPref = true, bool onlyPreSelect = false)
+    public bool TryMakeAntag(Entity<AntagSelectionComponent> ent, ICommonSession? session, AntagSelectionDefinition def, bool ignoreSpawner = false, bool checkPref = true)
     {
         if (checkPref && !HasPrimaryAntagPreference(session, def))
             return false;
@@ -333,19 +272,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (!IsSessionValid(ent, session, def) || !IsEntityValid(session?.AttachedEntity, def))
             return false;
 
-        if (onlyPreSelect && session != null)
-        {
-            if (!ent.Comp.PreSelectedSessions.TryGetValue(def, out var set))
-                ent.Comp.PreSelectedSessions.Add(def, set = new HashSet<ICommonSession>());
-            set.Add(session);
-            Log.Debug($"Pre-selected {session!.Name} as antagonist: {ToPrettyString(ent)}");
-            _adminLogger.Add(LogType.AntagSelection, $"Pre-selected {session.Name} as antagonist: {ToPrettyString(ent)}");
-        }
-        else
-        {
-            MakeAntag(ent, session, def, ignoreSpawner);
-        }
-
+        MakeAntag(ent, session, def, ignoreSpawner);
         return true;
     }
 
@@ -359,10 +286,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         if (session != null)
         {
-            if (!ent.Comp.PreSelectedSessions.TryGetValue(def, out var set))
-                ent.Comp.PreSelectedSessions.Add(def, set = new HashSet<ICommonSession>());
-            set.Add(session);
-            ent.Comp.AssignedSessions.Add(session);
+            ent.Comp.SelectedSessions.Add(session);
 
             // we shouldn't be blocking the entity if they're just a ghost or smth.
             if (!HasComp<GhostComponent>(session.AttachedEntity))
@@ -385,18 +309,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         {
             Log.Error($"Attempted to make {session} antagonist in gamerule {ToPrettyString(ent)} but there was no valid entity for player.");
             if (session != null)
-            {
-                ent.Comp.AssignedSessions.Remove(session);
-                ent.Comp.PreSelectedSessions[def].Remove(session);
-            }
-
+                ent.Comp.SelectedSessions.Remove(session);
             return;
         }
-
-        // TODO: This is really messy because this part runs twice for midround events.
-        // Once when the ghostrole spawner is created and once when a player takes it.
-        // Therefore any component subscribing to this has to make sure both subscriptions return the same value
-        // or the ghost role raffle location preview will be wrong.
 
         var getPosEv = new AntagSelectLocationEvent(session, ent);
         RaiseLocalEvent(ent, ref getPosEv, true);
@@ -415,11 +330,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             {
                 Log.Error($"Antag spawner {player} does not have a GhostRoleAntagSpawnerComponent.");
                 if (session != null)
-                {
-                    ent.Comp.AssignedSessions.Remove(session);
-                    ent.Comp.PreSelectedSessions[def].Remove(session);
-                }
-
+                    ent.Comp.SelectedSessions.Remove(session);
                 return;
             }
 
@@ -452,11 +363,10 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
             _mind.TransferTo(curMind.Value, antagEnt, ghostCheckOverride: true);
             _role.MindAddRoles(curMind.Value, def.MindRoles, null, true);
-            ent.Comp.AssignedMinds.Add((curMind.Value, Name(player)));
+            ent.Comp.SelectedMinds.Add((curMind.Value, Name(player)));
             SendBriefing(session, def.Briefing);
 
-            Log.Debug($"Assigned {ToPrettyString(curMind)} as antagonist: {ToPrettyString(ent)}");
-            _adminLogger.Add(LogType.AntagSelection, $"Assigned {ToPrettyString(curMind)} as antagonist: {ToPrettyString(ent)}");
+            Log.Debug($"Selected {ToPrettyString(curMind)} as antagonist: {ToPrettyString(ent)}");
         }
 
         var afterEv = new AfterAntagEntitySelectedEvent(session, player, ent, def);
@@ -502,10 +412,14 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (session.Status is SessionStatus.Disconnected or SessionStatus.Zombie)
             return false;
 
-        if (ent.Comp.AssignedSessions.Contains(session))
+        if (ent.Comp.SelectedSessions.Contains(session))
             return false;
 
         mind ??= session.GetMind();
+
+        // If the player has not spawned in as any entity (e.g., in the lobby), they can be given an antag role/entity.
+        if (mind == null)
+            return true;
 
         //todo: we need some way to check that we're not getting the same role twice. (double picking thieves or zombies through midrounds)
 
@@ -515,15 +429,11 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             {
                 if (_role.MindIsAntagonist(mind))
                     return false;
-                if (GetPreSelectedAntagSessions(def).Contains(session)) // Used for rules where the antag has been selected, but not started yet
-                    return false;
                 break;
             }
             case AntagAcceptability.NotExclusive:
             {
                 if (_role.MindIsExclusiveAntagonist(mind))
-                    return false;
-                if (GetPreSelectedExclusiveAntagSessions(def).Contains(session))
                     return false;
                 break;
             }
@@ -571,7 +481,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (ent.Comp.AgentName is not { } name)
             return;
 
-        args.Minds = ent.Comp.AssignedMinds;
+        args.Minds = ent.Comp.SelectedMinds;
         args.AgentName = Loc.GetString(name);
     }
 }

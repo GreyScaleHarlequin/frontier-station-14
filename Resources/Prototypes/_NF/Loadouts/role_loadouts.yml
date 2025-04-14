@@ -101,7 +101,7 @@
   - JanitorNFHead
   - JanitorNFJumpsuit
   - JanitorNFGloves
-  - JanitorBackpack
+  - ContractorBackpack
   - JanitorNFOuterClothing
   - ContractorFace
   - ContractorGlasses
@@ -441,20 +441,20 @@
   - ContractorHandItems
   - NfsdSpeciesSpecific
 
-# NFPirate
+# Pirate
 
 - type: roleLoadout
-  id: JobNFPirate
+  id: JobPirate
   groups:
-  - NFPirateHead
-#  - NFPirateNeck
-  - NFPirateJumpsuit
-#  - NFPirateGloves
+  - PirateHead
+#  - PirateNeck
+  - PirateJumpsuit
+#  - PirateGloves
   - ContractorBackpack
-  - NFPirateShoes
-  - NFPirateFace
+  - PirateShoes
+  - PirateFace
   - ContractorBoxSurvival
-  - NFPiratePDA
+  - PiratePDA
   - ContractorWallet
   - PirateBackpackItems
   - ContractorHandItems
@@ -462,18 +462,18 @@
   canCustomizeName: true # pseudonym?
 
 - type: roleLoadout
-  id: JobNFPirateFirstMate
+  id: JobPirateFirstMate
   groups:
-  - NFPirateFirstMateHead
-#  - NFPirateNeck
-  - NFPirateJumpsuit
-#  - NFPirateGloves
+  - PirateFirstMateHead
+#  - PirateNeck
+  - PirateJumpsuit
+#  - PirateGloves
   - ContractorBackpack
-  - NFPirateFirstMateOuterClothing
-  - NFPirateShoes
-  - NFPirateFace
+  - PirateFirstMateOuterClothing
+  - PirateShoes
+  - PirateFace
   - ContractorBoxSurvival
-  - NFPirateFirstMatePDA
+  - PirateFirstMatePDA
   - ContractorWallet
   - PirateBackpackItems
   - ContractorHandItems
@@ -481,18 +481,18 @@
   canCustomizeName: true # pseudonym?
 
 - type: roleLoadout
-  id: JobNFPirateCaptain
+  id: JobPirateCaptain
   groups:
-  - NFPirateCaptainHead
-#  - NFPirateNeck
-  - NFPirateJumpsuit
-#  - NFPirateGloves
+  - PirateCaptainHead
+#  - PirateNeck
+  - PirateJumpsuit
+#  - PirateGloves
   - ContractorBackpack
-  - NFPirateCaptainOuterClothing
-  - NFPirateShoes
-  - NFPirateFace
+  - PirateCaptainOuterClothing
+  - PirateShoes
+  - PirateFace
   - ContractorBoxSurvival
-  - NFPirateCaptainPDA
+  - PirateCaptainPDA
   - PirateCaptainWallet
   - PirateCaptainBackpackItems
   - ContractorHandItems

@@ -841,13 +841,11 @@
   - type: Access
     groups:
     - AllAccess
-    - Silicon
     tags:
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
     - Wizard
-    - Pirate # Frontier
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener

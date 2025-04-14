@@ -16,7 +16,7 @@
   - Goblin
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -70,7 +70,7 @@
   #- SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -100,7 +100,7 @@
   - SyndicateNF
   #- WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   #- ArtifactConstruct
   - StreetGangNF
@@ -130,7 +130,7 @@
   - SyndicateNF
   - WizFedFaction
   #- BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -142,7 +142,7 @@
   - ContrabandDetection
 
 - type: npcFaction
-  id: NFPirate
+  id: PirateNF
   hostile:
   ## SS14 factions
   - NanoTrasen
@@ -160,7 +160,7 @@
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  #- NFPirate
+  #- PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -219,7 +219,7 @@
   - SyndicateNF
   #- WizFedFaction # Magic
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   #- ArtifactConstruct
   - StreetGangNF
@@ -249,7 +249,7 @@
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   #- StreetGangNF
@@ -279,7 +279,7 @@
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -309,7 +309,7 @@
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   #- ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -339,7 +339,7 @@
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -369,7 +369,7 @@
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -399,7 +399,7 @@
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -429,7 +429,7 @@
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -470,7 +470,7 @@
   - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF

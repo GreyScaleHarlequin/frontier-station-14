@@ -3049,7 +3049,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 6.5,-8.5
       parent: 1
-- proto: Catwalk
+- proto: CargoPallet
   entities:
   - uid: 139
     components:
@@ -6207,7 +6207,7 @@ entities:
     - type: Transform
       pos: -2.5,3.5
       parent: 1
-- proto: PoweredlightUltraviolet
+- proto: PoweredlightBlack
   entities:
   - uid: 456
     components:

@@ -1,18 +1,6 @@
 meta:
-  format: 7
-  category: Map
-  engineVersion: 247.2.0
-  forkId: ""
-  forkVersion: ""
-  time: 03/07/2025 19:46:39
-  entityCount: 30125
-maps:
-- 1
-grids:
-- 2
-- 21002
-orphans: []
-nullspace: []
+  format: 6
+  postmapinit: false
 tilemap:
   14: Space
   45: FloorArcadeBlue2
@@ -83,6 +71,7 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
+    - type: LoadedMap
   - uid: 2
     components:
     - type: MetaData
@@ -12640,7 +12629,7 @@ entities:
       pos: 38.5,-9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -11985.299
+      secondsUntilStateChange: -11933.729
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14561,7 +14550,7 @@ entities:
       pos: -22.5,26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -34037.47
+      secondsUntilStateChange: -33985.9
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15412,7 +15401,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -132866.08
+      secondsUntilStateChange: -132814.52
       state: Opening
   - uid: 6934
     components:
@@ -15424,7 +15413,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -132868.7
+      secondsUntilStateChange: -132817.14
       state: Opening
   - uid: 6935
     components:
@@ -15436,7 +15425,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -132867.56
+      secondsUntilStateChange: -132816
       state: Opening
   - uid: 6936
     components:
@@ -15447,7 +15436,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -132866.78
+      secondsUntilStateChange: -132815.22
       state: Opening
 - proto: AirlockTheatreLocked
   entities:
@@ -71302,13 +71291,6 @@ entities:
     - type: Transform
       pos: -48.60224,7.6590858
       parent: 2
-- proto: CargoMailTeleporter
-  entities:
-  - uid: 23418
-    components:
-    - type: Transform
-      pos: -52.5,1.5
-      parent: 2
 - proto: CarpetBlack
   entities:
   - uid: 786
@@ -96310,7 +96292,7 @@ entities:
       pos: -13.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -124190.086
+      secondsUntilStateChange: -124138.516
     - type: DeviceNetwork
       deviceLists:
       - 18275
@@ -142258,7 +142240,7 @@ entities:
       pos: 36.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -161021.89
+      secondsUntilStateChange: -160970.33
       state: Opening
   - uid: 5211
     components:
@@ -193365,7 +193347,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -11988.132
+      secondsUntilStateChange: -11936.562
       state: Opening
     - type: Airlock
       autoClose: False
@@ -194799,7 +194781,7 @@ entities:
       pos: 24.5,2.5
       parent: 21002
     - type: Door
-      secondsUntilStateChange: -506226.47
+      secondsUntilStateChange: -506174.9
       state: Opening
   - uid: 28863
     components:

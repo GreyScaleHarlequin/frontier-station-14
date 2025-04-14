@@ -134,8 +134,8 @@
   parent: NFWearableIFFRecipe
 
 - type: latheRecipe # Remove this ones we have a black crystal
-  id: LightTubeUltraviolet
-  result: LightTubeUltraviolet
+  id: LightTubeCrystalBlack
+  result: LightTubeCrystalBlack
   parent: NFBaseLightTubeRecipe
 
 - type: latheRecipe

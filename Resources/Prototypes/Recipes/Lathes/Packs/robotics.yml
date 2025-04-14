@@ -43,8 +43,8 @@
   - BorgModuleAnomaly
   - BorgModuleGardening
   - BorgModuleHarvesting
-  #- BorgModuleDefibrillator # Frontier
-  #- BorgModuleAdvancedTreatment # Frontier
+  - BorgModuleDefibrillator
+  - BorgModuleAdvancedTreatment
   - BorgModuleJetpack # Frontier
   - BorgModuleAdvancedParamedic # Frontier
   - BorgModuleAdvancedMining # Frontier

@@ -1,17 +1,6 @@
 meta:
-  format: 7
-  category: Grid
-  engineVersion: 247.2.0
-  forkId: ""
-  forkVersion: ""
-  time: 03/22/2025 00:16:16
-  entityCount: 6307
-maps: []
-grids:
-- 1
-orphans:
-- 1
-nullspace: []
+  format: 6
+  postmapinit: false
 tilemap:
   0: Space
   24: FloorAstroGrass
@@ -183,11 +172,6 @@ entities:
           version: 6
     - type: Broadphase
     - type: Physics
-      bodyStatus: InAir
-      angularDamping: 0.05
-      linearDamping: 0.05
-      fixedRotation: False
-      bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
     - type: OccluderTree
@@ -695,7 +679,7 @@ entities:
           11,0:
             0: 58623
           10,4:
-            2: 2184
+            2: 136
           11,-1:
             0: 62702
           11,1:
@@ -723,7 +707,7 @@ entities:
             3: 8192
             2: 2184
           10,-5:
-            2: 34816
+            2: 32768
           11,-4:
             0: 60416
           11,-3:
@@ -739,21 +723,21 @@ entities:
           12,-1:
             0: 65262
           11,4:
-            2: 18176
+            2: 112
           12,4:
-            0: 61439
+            0: 3839
           13,4:
-            0: 273
-            2: 19648
+            0: 17
+            2: 192
           14,4:
-            2: 1023
+            2: 62
           14,3:
-            2: 57856
+            2: 8704
             0: 2
           15,4:
-            2: 3
+            2: 1
           15,3:
-            2: 32748
+            2: 14024
           12,1:
             0: 61166
           13,0:
@@ -780,45 +764,35 @@ entities:
             0: 28927
           15,2:
             0: 19
-            2: 32768
           15,-1:
             0: 65535
           16,0:
             0: 7679
           16,1:
             0: 1
-            2: 64648
-          16,2:
-            2: 30702
+            2: 63624
           16,3:
-            2: 19
+            2: 1
           16,-1:
             0: 64785
             2: 8
+          16,2:
+            2: 13892
           17,0:
-            0: 307
-          17,1:
-            2: 4371
+            0: 17
           17,-1:
-            0: 12544
-            2: 3
-          16,-4:
-            2: 4096
+            0: 4096
           16,-3:
-            2: 59251
-          15,-4:
-            2: 61299
+            2: 17969
           15,-3:
-            2: 140
+            2: 8
             0: 4096
           16,-2:
-            2: 36094
+            2: 35060
           15,-2:
             0: 61555
-          17,-2:
-            2: 4368
           12,-5:
-            0: 65504
+            0: 65024
           13,-4:
             0: 63233
           13,-3:
@@ -826,18 +800,20 @@ entities:
           13,-2:
             0: 65295
           13,-5:
-            0: 4352
-            2: 52288
+            0: 4096
+            2: 49152
           14,-3:
             0: 65122
           14,-2:
             0: 55758
           14,-4:
-            2: 751
+            2: 558
           14,-5:
-            2: 62208
+            2: 12288
+          15,-4:
+            2: 50737
           11,-5:
-            2: 1856
+            2: 28672
         uniqueMixes:
         - volume: 2500
           temperature: 293.15
@@ -902,8 +878,8 @@ entities:
         - volume: 2500
           temperature: 235
           moles:
-          - 27.225372
-          - 102.419266
+          - 21.824879
+          - 82.10312
           - 0
           - 0
           - 0
@@ -5324,6 +5300,7 @@ entities:
             1866: -10,8
     - type: BecomesStation
       id: TradeMall
+    - type: StationTransit
     - type: IFF
     - type: StationMember
     - type: NavMap
@@ -6026,7 +6003,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 26.5,-11.5
       parent: 1
-- proto: AirlockExternalGlassShuttleTransitTradeExpress
+- proto: AirlockExternalGlassShuttleTransit
   entities:
   - uid: 2467
     components:
@@ -10327,18 +10304,6 @@ entities:
     components:
     - type: Transform
       pos: 16.5,-15.5
-      parent: 1
-- proto: BusSchedule
-  entities:
-  - uid: 393
-    components:
-    - type: Transform
-      pos: 19.5,2.5
-      parent: 1
-  - uid: 496
-    components:
-    - type: Transform
-      pos: 19.5,12.5
       parent: 1
 - proto: ButchCleaver
   entities:
@@ -31858,7 +31823,14 @@ entities:
   - uid: 1827
     components:
     - type: Transform
-      pos: 16.5,12.5
+      rot: 3.141592653589793 rad
+      pos: 19.5,2.5
+      parent: 1
+  - uid: 1888
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 19.5,12.5
       parent: 1
   - uid: 2054
     components:

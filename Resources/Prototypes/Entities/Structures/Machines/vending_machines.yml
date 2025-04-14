@@ -1475,7 +1475,7 @@
 
 - type: entity
   id: VendingMachineWallmount
-  parent: [BaseStructureWallmount, VendingMachine] # Frontier: add BaseStructureWallmount
+  parent: VendingMachine
   name: vending machine
   abstract: true
   placement:

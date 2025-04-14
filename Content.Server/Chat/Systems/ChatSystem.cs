@@ -593,18 +593,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entity", ent),
             ("message", FormattedMessage.RemoveMarkupOrThrow(action)));
 
-        bool soundEmoteSent = true; // Frontier: if check emote is false, assume somebody's sending an emote
         if (checkEmote)
-            soundEmoteSent = TryEmoteChatInput(source, action); // Frontier: assign value to soundEmoteSent
-
-        // Frontier: send emote message
-        if (!soundEmoteSent)
-        {
-            var ev = new NFEntityEmotedEvent(source, action);
-            RaiseLocalEvent(source, ev, true);
-        }
-        // End Frontier
-
+            TryEmoteChatInput(source, action);
         SendInVoiceRange(ChatChannel.Emotes, action, wrappedMessage, source, range, author);
         if (!hideLog)
             if (name != Name(source))
@@ -975,23 +965,6 @@ public sealed class EntitySpokeEvent : EntityEventArgs
         ObfuscatedMessage = obfuscatedMessage;
     }
 }
-
-// Frontier: emote event
-/// <summary>
-///     Raised on an entity when it sends a custom emote (one with a message but no sound).
-/// </summary>
-public sealed class NFEntityEmotedEvent : EntityEventArgs
-{
-    public readonly EntityUid Source;
-    public readonly string Emote;
-
-    public NFEntityEmotedEvent(EntityUid source, string emote)
-    {
-        Source = source;
-        Emote = emote;
-    }
-}
-// End Frontier
 
 /// <summary>
 ///     InGame IC chat is for chat that is specifically ingame (not lobby) but is also in character, i.e. speaking.

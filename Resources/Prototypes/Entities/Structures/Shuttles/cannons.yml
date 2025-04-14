@@ -303,7 +303,7 @@
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
   - type: NpcFactionMember # Frontier
     factions: # Frontier
-    - NFPirate # Frontier
+    - PirateNF # Frontier
   - type: Rotatable # Frontier
     rotateWhileAnchored: true # Frontier
 

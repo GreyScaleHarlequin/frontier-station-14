@@ -7,9 +7,9 @@
   - type: CargoSellBlacklist
 
 - type: entity
-  id: MobCatClippy
-  parent: [NFMobPet, MobCatGhost]
   name: Clippy
+  parent: [NFMobPet, MobCatGhost]
+  id: MobCatClippy
   description: It looks like you’re writing a letter, would you like help?
   components:
   - type: GhostRole
@@ -21,7 +21,7 @@
   - type: Loadout
     prototypes: [ MobClippyGear ]
   - type: RandomMetadata
-    nameSegments: null
+    nameSegments: [names_cat_clippy]
   - type: AutoImplant
     implants:
     - MindShieldImplant
@@ -44,9 +44,9 @@
   - type: ShowJobIcons
 
 - type: entity
-  id: MobCatClarpy
-  parent: [NFMobPet, MobCatGhost]
   name: Clarpy
+  parent: [NFMobPet, MobCatGhost]
+  id: MobCatClarpy
   description: First cat to gain a bounty.
   components:
   - type: Sprite
@@ -74,7 +74,7 @@
   - type: ReplacementAccent
     accent: pirateCat
   - type: RandomMetadata
-    nameSegments: [NamesCatClarpy]
+    nameSegments: [names_cat_clarpy]
   - type: AutoImplant
     implants:
     - FreelanceTrackingImplant
@@ -86,19 +86,19 @@
     - Freelance
   - type: NpcFactionMember
     factions:
-    - Cat # Shouldn't be innately hostile to NT-aligned mobs
+      - Cat
+     # - PirateNF Stupid cat too old to fight, also forgot he is a pirate.
   - type: PirateAccent
   - type: Speech
     audioParams:
       volume: -2
       rolloffFactor: 4.5
       pitch: 0.7
-  - type: AutoPirate
 
 - type: entity
-  id: MobCatCappy
-  parent: [NFMobPet, MobCatGhost, ShowSecurityIcons]
   name: Cappy
+  parent: [NFMobPet, MobCatGhost, ShowSecurityIcons]
+  id: MobCatCappy
   description: First cat to shoot a gun.
   components:
   - type: Sprite
@@ -122,7 +122,7 @@
   - type: ReplacementAccent
     accent: nfsdCat
   - type: RandomMetadata
-    nameSegments: null
+    nameSegments: [names_cat_cappy]
   - type: AutoImplant
     implants:
     - MindShieldImplant
@@ -143,8 +143,8 @@
     damage: 18
   - type: NpcFactionMember
     factions:
-    - Cat
-    - NanoTrasen
+      - Cat
+      - NanoTrasen
   - type: Speech
     speechSounds: NfsdCat
     speechVerb: SmallMob
@@ -161,9 +161,9 @@
   - type: SouthernAccent
 
 - type: entity
-  id: MobCatElCapo
-  parent: [NFMobPet, MobBingusGhost]
   name: El Capo
+  parent: [NFMobPet, MobBingusGhost]
+  id: MobCatElCapo
   description: Wanted for countless cat crimes.
   components:
   - type: Sprite
@@ -182,19 +182,19 @@
     rules: ghost-role-information-freeagent-rules
     mindRoles: [ MindRoleGhostRoleFreeAgent ]
   - type: RandomMetadata
-    nameSegments: null
+    nameSegments: [names_cat_elcapo]
   - type: AutoImplant
     implants:
     - TrackingImplant
   - type: NpcFactionMember
     factions:
-    - Cat
+      - Cat
 
 - type: entity
-  id: MobCatClugg
-  parent: [NFMobPet, MobCatCaracalGhost]
   name: Clugg
-  description: A prehistoric saber-toothed cat. Loves steak.
+  parent: [NFMobPet, MobCatCaracalGhost]
+  id: MobCatClugg
+  description:
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -212,10 +212,10 @@
     rules: ghost-role-information-nonantagonist-rules
     mindRoles: [ MindRoleGhostRoleNeutral ]
   - type: RandomMetadata
-    nameSegments: null
+    nameSegments: [names_cat_clugg]
   - type: NpcFactionMember
     factions:
-    - Cat # Needs to be neutral to dinosaurs.
+      - Cat # Everybody loves Clugg. Maybe not pitbulls.
   - type: NFSalvageMobRestrictions
     despawnIfOffLinkedGrid: false
     addComponentsOnDeath: []
@@ -223,9 +223,9 @@
   - type: CavemanAccent
 
 - type: entity
-  id: MobCatMistake
-  parent: MobCatGhost
   name: Mistake
+  parent: MobCatGhost
+  id: MobCatMistake
   description: "???"
   components:
   - type: Sprite
@@ -246,7 +246,7 @@
   - type: ReplacementAccent
     accent: mistakeCat
   - type: RandomMetadata
-    nameSegments: [NamesCatMistake]
+    nameSegments: [names_cat_mistake]
   - type: Vocal
     sounds:
       Male: CatMistake
@@ -264,7 +264,7 @@
     removeComponentsOnDeath: []
   - type: NpcFactionMember
     factions:
-    - Cat
+      - Cat
   - type: Respirator # Paranormal cat: doesn't need to breathe (but it will)
     updateInterval: 99999 # Shouldn't run often, if ever.
     suffocationThreshold: -100 # Should never happen.
@@ -274,9 +274,9 @@
       types: {}
 
 - type: entity
-  id: MobCatBloodCult
-  parent: [NFMobPet, MobCatMistake]
   name: blood cult cat
+  parent: [NFMobPet, MobCatMistake]
+  id: MobCatBloodCult
   description: Founded the Blood Cult out of boredom.
   components:
   - type: Body
@@ -314,7 +314,7 @@
     mindRoles: [ MindRoleGhostRoleFreeAgent ]
     prototype: CatBloodCult
   - type: RandomMetadata
-    nameSegments: [ NamesCatCult ]
+    nameSegments: [ names_cat_cult ]
   - type: AutoImplant
     implants:
     - RedLightImplant
@@ -352,9 +352,9 @@
 
 - type: entity
   id: ActionEldritchPush
+  categories: [ HideSpawnMenu ]
   name: "[color=yellow]Force Push[/color]"
   description: "Summon forth an eldritch hand. [color=yellow]5 minute cooldown.[/color]"
-  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     icon: { sprite : _NF/Effects/bloodcultprojectiles.rsi, state: hand }
@@ -367,9 +367,9 @@
 
 # Adopted from space-wizards #26265 (Thank you, PolterTzi)
 - type: entity
-  id: MobKoboldYipyip
-  parent: MobKobold
   name: Yip Yip
+  parent: MobKobold
+  id: MobKoboldYipyip
   description: He lives in a pineapple on the Frontier!
   components:
   - type: GhostRole
@@ -386,7 +386,7 @@
     butcheringType: Spike
     spawned:
     - id: FoodMeat
-      amount: 2
+      amount: 3
     - id: DrinkPremiumRumBottleFull
       amount: 1
   - type: Tag
@@ -403,8 +403,8 @@
       gender: male
   - type: RandomSprite # Random with one choice.
     available:
-    - enum.DamageStateVisualLayers.Base:
-        kobold: YipYipColors
-    - horns:
-        horns_curled: YipYipHornColors
+      - enum.DamageStateVisualLayers.Base:
+          kobold: YipYipColors
+      - horns:
+          horns_curled: YipYipHornColors
   - type: CargoSellBlacklist

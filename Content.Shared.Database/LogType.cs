@@ -455,13 +455,7 @@ public enum LogType
     /// </summary>
     AdminCommands = 98,
 
-    /// <summary>
-    /// A player was selected or assigned antag status
-    /// </summary>
-    AntagSelection = 99,
-
     // Frontier Station Specific
-    #region Frontier Values
     ATMUsage = 200,
     ShipYardUsage = 201,
     ShuttleRecordsUsage = 202,
@@ -486,6 +480,4 @@ public enum LogType
     /// A medical bounty was redeemed.
     /// </summary>
     MedicalBountyRedeemed = 207,
-    #endregion Frontier Values
-    // End Frontier
 }

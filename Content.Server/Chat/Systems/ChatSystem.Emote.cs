@@ -164,11 +164,11 @@ public partial class ChatSystem
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="textInput"></param>
-    private bool TryEmoteChatInput(EntityUid uid, string textInput) // Frontier: void<bool
+    private void TryEmoteChatInput(EntityUid uid, string textInput)
     {
         var actionTrimmedLower = TrimPunctuation(textInput.ToLower());
         if (!_wordEmoteDict.TryGetValue(actionTrimmedLower, out var emotes)) // DeltaV, renames to emotes
-            return false; // Frontier: add false
+            return;
 
         bool validEmote = false; // DeltaV - Multiple emotes for the same trigger
         foreach (var emote in emotes)
@@ -178,10 +178,10 @@ public partial class ChatSystem
 
             InvokeEmoteEvent(uid, emote);
             validEmote = true; // DeltaV
-            break; // Frontier: break on first emote (avoid playing multiple sounds at once)
         }
 
-        return validEmote; // Frontier
+        if (!validEmote) // DeltaV
+            return;
 
         static string TrimPunctuation(string textInput)
         {

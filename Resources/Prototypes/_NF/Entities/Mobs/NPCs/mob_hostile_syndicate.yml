@@ -19,9 +19,9 @@
     randomizeName: false
   - type: RandomMetadata
     nameSegments:
-    - NamesSyndicatePrefix
-    - NamesSyndicateNormal
-    - NamesSyndicateElite
+    - SyndicateNamesPrefix
+    - SyndicateNamesNormal
+    - SyndicateNamesElite
   #- type: AutoImplant
     #implants:
     #- DeathRattleImplant

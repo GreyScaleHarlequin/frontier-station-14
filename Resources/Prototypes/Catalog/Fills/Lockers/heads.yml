@@ -18,7 +18,6 @@
     - id: RubberStampDenied
     - id: RubberStampQm
 #    - id: AstroNavCartridge # Frontier
-#    - id: MailTeleporterMachineCircuitboard # Frontier
     - id: ClothingBeltUtilityEngineering # Frontier
 
 - type: entity
@@ -330,7 +329,7 @@
   table: !type:AllSelector
     children:
 #    - id: WeaponEnergyShotgun # Frontier
-    - id: NFHyperlinkBookSpaceLaw # Frontier: BookSpaceLaw<NFHyperlinkBookSpaceLaw
+    - id: HyperlinkBookSpaceLaw # Frontier: BookSpaceLaw<HyperlinkBookSpaceLaw
 #    - id: BoxEncryptionKeySecurity # Frontier
 #    - id: CigarGoldCase # Frontier
 #      prob: 0.50 # Frontier

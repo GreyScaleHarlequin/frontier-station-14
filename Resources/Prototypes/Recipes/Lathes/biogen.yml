@@ -3,7 +3,7 @@
   result: MonkeyCube
   categories:
   - Food
-  completetime: 3
+  completetime: 300 # Frontier 3<300
   materials:
     Biomass: 70
 
@@ -12,7 +12,7 @@
   result: KoboldCube
   categories:
   - Food
-  completetime: 3
+  completetime: 300 # Frontier 3<300
   materials:
     Biomass: 70
 

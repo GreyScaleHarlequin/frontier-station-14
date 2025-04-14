@@ -2776,7 +2776,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -5.5,-3.5
       parent: 2
-- proto: NFRandomBook
+- proto: RandomBook
   entities:
   - uid: 117
     components:

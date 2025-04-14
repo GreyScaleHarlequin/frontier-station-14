@@ -32,7 +32,7 @@
         amount: 2
 
 - type: entity
-  parent: ClothingBackpackDuffelTrauma
+  parent: ClothingBackpackDuffelMedical
   id: ClothingBackpackDuffelSurgeryAdvancedFilled
   name: advanced surgical duffel bag
   description: "A large duffel bag for holding extra medical supplies - this one seems to be designed for holding advanced surgical tools."
@@ -97,7 +97,7 @@
   suffix: Filled
 
 - type: entity
-  parent: [ ClothingBackpackDuffelSr, StorageFillEVASuitSr ]
+  parent: [ ClothingBackpackDuffelCaptain, StorageFillEVASuitSr ]
   id: ClothingBackpackDuffelEVABundleSr
   name: station representative EVA bundle
   suffix: Filled
@@ -145,7 +145,7 @@
   suffix: Filled
 
 - type: entity
-  parent: [ NFClothingBackpackDuffelJanitor, StorageFillEVASuitJanitor ]
+  parent: [ NFClothingDuffel, StorageFillEVASuitJanitor ]
   id: ClothingBackpackDuffelEVABundleJanitor
   name: janitor EVA bundle
   suffix: Filled
@@ -157,7 +157,7 @@
   suffix: Filled
 
 - type: entity
-  parent: [ NFClothingBackpackDuffelChaplain, StorageFillEVASuitChaplain ]
+  parent: [ NFClothingDuffel, StorageFillEVASuitChaplain ]
   id: ClothingBackpackDuffelEVABundleChaplain
   name: chaplain EVA bundle
   suffix: Filled
@@ -199,7 +199,7 @@
   suffix: Filled
 
 - type: entity
-  parent: [ NFClothingBackpackDuffelMailCarrier, StorageFillEVASuitMail ]
+  parent: [ NFClothingDuffel, StorageFillEVASuitMail ]
   id: ClothingBackpackDuffelEVABundleMail
   name: mail carrier EVA bundle
   suffix: Filled
@@ -211,7 +211,7 @@
   suffix: Filled
 
 - type: entity
-  parent: [ ClothingBackpackDuffelPrivateSecurity, StorageFillEVASuitPrivateSec ]
+  parent: [ NFClothingDuffel, StorageFillEVASuitPrivateSec ]
   id: ClothingBackpackDuffelEVABundlePrivateSec
   name: private security EVA bundle
   suffix: Filled

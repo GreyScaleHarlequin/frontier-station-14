@@ -1,18 +1,6 @@
 meta:
-  format: 7
-  category: Map
-  engineVersion: 247.2.0
-  forkId: ""
-  forkVersion: ""
-  time: 03/07/2025 19:53:37
-  entityCount: 28709
-maps:
-- 951
-grids:
-- 5350
-- 28213
-orphans: []
-nullspace: []
+  format: 6
+  postmapinit: false
 tilemap:
   0: Space
   11: FloorArcadeBlue
@@ -80,6 +68,7 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
+    - type: LoadedMap
   - uid: 5350
     components:
     - type: MetaData
@@ -12384,7 +12373,7 @@ entities:
       pos: 11.5,29.5
       parent: 5350
     - type: Door
-      secondsUntilStateChange: -3620.7197
+      secondsUntilStateChange: -3512.0142
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14679,7 +14668,7 @@ entities:
       pos: -29.5,15.5
       parent: 5350
     - type: Door
-      secondsUntilStateChange: -257550.02
+      secondsUntilStateChange: -257441.31
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14943,7 +14932,7 @@ entities:
       pos: -4.5,53.5
       parent: 5350
     - type: Door
-      secondsUntilStateChange: -112203.75
+      secondsUntilStateChange: -112095.05
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 2
@@ -58277,13 +58266,6 @@ entities:
     - type: Transform
       pos: 76.5,-36.5
       parent: 5350
-- proto: CargoMailTeleporter
-  entities:
-  - uid: 3702
-    components:
-    - type: Transform
-      pos: -39.5,2.5
-      parent: 5350
 - proto: Carpet
   entities:
   - uid: 1125
@@ -82406,10 +82388,10 @@ entities:
       parent: 5350
 - proto: filingCabinetTallRandom
   entities:
-  - uid: 28709
+  - uid: 3702
     components:
     - type: Transform
-      pos: -42.5,4.5
+      pos: -39.5,2.5
       parent: 5350
 - proto: FireAlarm
   entities:
@@ -84542,7 +84524,7 @@ entities:
       pos: 31.5,-33.5
       parent: 5350
     - type: Door
-      secondsUntilStateChange: -35042.797
+      secondsUntilStateChange: -34934.09
       state: Closing
   - uid: 9615
     components:
@@ -185237,7 +185219,7 @@ entities:
       pos: -28.5,-5.5
       parent: 5350
     - type: Door
-      secondsUntilStateChange: -40754.707
+      secondsUntilStateChange: -40646
       state: Opening
   - uid: 17570
     components:

@@ -2125,7 +2125,7 @@ entities:
       canCollide: False
     - type: Fixtures
       fixtures: {}
-- proto: Catwalk
+- proto: CargoPallet
   entities:
   - uid: 306
     components:
