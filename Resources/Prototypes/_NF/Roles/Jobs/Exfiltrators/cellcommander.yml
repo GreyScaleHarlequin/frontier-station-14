@@ -1,0 +1,48 @@
+﻿- type: job
+  id: CellCommander
+  name: job-name-cell-comm
+  description: job-description-cell-comm
+  playTimeTracker: JobCellComm
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 72000 # 20 hrs
+  - !type:RoleTimeRequirement
+    role: JobCellOperative
+    time: 28800 # 8 hours
+  whitelisted: true
+  startingGear: CellCommGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  supervisors: job-supervisors-syndicate
+  weight: 160
+  displayWeight: 60 # Second from the top
+  canBeAntag: true
+  access:
+  - SyndicateAgent
+  - NuclearOperative
+  special:
+  - !type:AddImplantSpecial
+    implants: [ DeathRattleExfilImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: MailDisabled
+    - type: SpecialSectorStationRecord
+      recordGeneration: FalseRecord
+    - type: NpcFactionMember
+      factions:
+      - ExfiltratorsNF
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+
+- type: startingGear
+  id: CellCommGear
+  equipment:
+    pocket1: WeaponDisabler
+    pocket2: WeaponPistolViper
+    ears: ClothingHeadsetExfiltrator
+  storage:
+    back:
+    - DeathRattleExfilImplanter
+    - MagazinePistol
+    - MagazinePistol

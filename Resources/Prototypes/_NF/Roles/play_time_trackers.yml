@@ -24,10 +24,10 @@
 
 - type: playTimeTracker
   id: JobPirateCaptain
-  
+
 - type: playTimeTracker
   id: JobPirateFirstMate
-  
+
 - type: playTimeTracker
   id: JobPirate
 
@@ -51,3 +51,12 @@
 
 - type: playTimeTracker
   id: JobValet
+
+- type: playTimeTracker
+  id: JobCellOperative
+
+- type: playTimeTracker
+  id: JobCellMedic
+
+- type: playTimeTracker
+  id: JobCellComm
