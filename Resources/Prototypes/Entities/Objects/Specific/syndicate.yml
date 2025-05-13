@@ -75,6 +75,15 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadio20TC
+  suffix: 10 TC
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 10
+
+- type: entity
+  parent: BaseUplinkRadio
+  id: BaseUplinkRadio20TC
   suffix: 20 TC
   components:
   - type: Store
