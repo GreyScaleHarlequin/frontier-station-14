@@ -132,3 +132,16 @@
     containers:
       key_slots:
       - EncryptionKeyDoc
+
+#Exfiltrator headset
+
+- type: entity
+  id: ClothingHeadsetExfiltrator
+  parent: ClothingHeadsetGrey
+  name: Shifty Headset
+  description: An updated, modular intercom that... something's off. Takes encryption keys.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyExfiltrator

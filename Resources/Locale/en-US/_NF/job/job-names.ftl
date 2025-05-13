@@ -2,6 +2,9 @@
 job-name-bailiff = Bailiff
 job-name-brigmedic = Brigmedic
 job-name-cadet-nf = Cadet
+job-name-cell-comm = Cell Commander
+job-name-cell-medic = Cell Medic
+job-name-cell-operative = Cell Operative
 job-name-contractor = Contractor
 job-name-contractor-interview = Contractor Applicant
 job-name-deputy = Deputy
