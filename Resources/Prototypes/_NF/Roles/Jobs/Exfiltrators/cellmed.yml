@@ -36,8 +36,8 @@
 - type: startingGear
   id: CellMedGear
   equipment:
-    pocket1: WeaponDisabler
-    pocket2: WeaponPistolViper
+    pocket1: NFWeaponEnergyPistolDisabler
+    pocket2: NFWeaponPistolViper
     ears: ClothingHeadsetExfiltrator
   storage:
     back:
